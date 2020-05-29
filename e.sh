@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
 make clean
-make
+make portugolc
 make init
-gedit codigo.c
+make exec
