@@ -81,6 +81,7 @@ Linha:
 	| InclusaoDefinicao
 	| LeituraEscrita
 	| EstruturaRepeticao
+	| Operacao
 	| Retorno
 ;
 
@@ -143,6 +144,11 @@ EstruturaRepeticao:
 	| ENQUANTO IDENTIFICADOR IGUAL NUMERO_REAL CHAVE_ESQUERDA { printf("while (%s == %d) {", $2, $4 );}
 ;
 
+Operacao:
+	TIPO IDENTIFICADOR ATRIBUICAO NUMERO_REAL MAIS NUMERO_REAL PONTO_E_VIRGULA { printf("float %s = %d + %d;", $2, $4, $4);}
+	| TIPO IDENTIFICADOR ATRIBUICAO NUMERO_REAL MENOS NUMERO_REAL PONTO_E_VIRGULA { printf("float %s = %d - %d;", $2, $4, $4);}
+;
+
 Retorno:
 	RETORNE NUMERO_REAL PONTO_E_VIRGULA { 
 		int aux=0, aux1=0;
@@ -193,23 +199,18 @@ int main(int argc, char *argv[])
 	else
 		arquivoEntrada = argv[1];
 
-	// open a file handle to a particular file:
+	// Abre o arquivo
 	FILE *myfile = fopen(arquivoEntrada.c_str(), "r");
 
-/*	string arquivoSaida;
-
-	if(argc > 2)
-		arquivoSaida = argv[argc-1];*/
-
-	// make sure it is valid:
+	// Verifica se o arquivo é valido:
 	if (!myfile) {
-		printf("Desculpe-nos!! Não conseguimos abrir o arquivo: %s! \n", arquivoEntrada.c_str());
+		printf("Não foi possível abrir o arquivo: %s \n", arquivoEntrada.c_str());
 		return -1;
 	}
-	// set flex to read from it instead of defaulting to STDIN:
+	// Define o arquivo para leitura no flex
 	yyin = myfile;
 	
-	// parse through the input until there is no more:
+	// Parse do arquivo
 	do {
 		yyparse();
 	} while (!feof(yyin));

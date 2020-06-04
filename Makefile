@@ -1,10 +1,10 @@
-portugolc: PCLexico.l PCSintatico.y
-	bison -d PCSintatico.y
-	mv PCSintatico.tab.h build/sintatico.h
-	mv PCSintatico.tab.c build/sintatico.c
-	flex PCLexico.l
+compilar: TabLexica.l TabSintatica.y
+	bison -d TabSintatica.y
+	mv TabSintatica.tab.h build/sintatico.h
+	mv TabSintatica.tab.c build/sintatico.c
+	flex TabLexica.l
 	mv lex.yy.c build/lexico.c
-	g++ build/sintatico.c build/lexico.c -Wall -g -o build/portugolc -lm
+	g++ build/sintatico.c build/lexico.c -g -o build/portugolc -lm
 
 init: #portugolc
 	rm build/codigo.c

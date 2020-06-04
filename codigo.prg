@@ -2,16 +2,10 @@ inclua <math>
 inclua <stdlib>
 inclua <stdio>
 
-defina MAX 3
-defina _SIZE 15
-defina MAX_SIZE 10
-defina xombi 12
-
 inteiro principal(){
 
 	real numeroA;
 	real numeroB;
-	caractere operacao;
 
 	escreva numeroA;
 	leia numeroA;
@@ -19,10 +13,16 @@ inteiro principal(){
 	escreva NumeroB;
 	leia numeroB;
 
-	escreva operacao;
-	leia operacao;
+	se numeroA > 10
+		escreva TestandoA;
+	
 
-	escreva Testando;
+	se numeroB > 10
+		escreva TestandoB;
+
+	real resultado <- 5 + 6;
+
+	escreva resultado;
 
 	retorne 0;
 }

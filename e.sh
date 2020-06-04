@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
 make clean
-make portugolc
+make compilar
 make init
 make exec

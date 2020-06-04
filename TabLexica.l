@@ -41,7 +41,6 @@ identificador {letra}+|{letra}+_{letra}+|_{letra}+
 "enquanto" 	return(ENQUANTO);
 "se" 		return(SE);
 "senao"		return(SENAO);
-"else" 		return(SENAO);
 "para"		return(PARA);
 "de"		return(DE);
 "ate"		return(ATE);
@@ -50,7 +49,6 @@ identificador {letra}+|{letra}+_{letra}+|_{letra}+
 
 "pare"		return(PARE);
 "retorne"	return(RETORNE);
-"return"	return(RETORNE);
 
 "leia"		return(LEIA);
 "escreva"	return(ESCREVA);
@@ -62,9 +60,7 @@ identificador {letra}+|{letra}+_{letra}+|_{letra}+
 "^" 		return(POTENCIA);
 
 "<-" 		return(ATRIBUICAO);
-"recebe" 	return(ATRIBUICAO);
 "!=" 		return(DIFERENTE);
-"diferente"	return(DIFERENTE);
 "&&" 		return(E);
 "||" 		return(OU);
 "+<-" 		return(MAIS_ATRIBUICAO);
@@ -86,7 +82,7 @@ identificador {letra}+|{letra}+_{letra}+|_{letra}+
 
 "//"		return(COMENTARIO);
 
-":" 		return(DOIS_PONTOS);	/* para a futura identação se der tempo */
+":" 		return(DOIS_PONTOS);
 ";" 		return(PONTO_E_VIRGULA);
 ","			return(VIRGULA);
 "(" 		return(PARENTESIS_ESQUERDO);
@@ -110,6 +106,3 @@ identificador {letra}+|{letra}+_{letra}+|_{letra}+
 
 
 %%
-
-//no aditional c code
-

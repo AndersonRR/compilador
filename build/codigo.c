@@ -2,16 +2,10 @@
 #include <stdlib.h>;
 #include <stdio.h>;
 
-#define MAX 3;
-#define _SIZE 15;
-#define MAX_SIZE 10;
-#define xombi 12;
-
 int main() {
 
 	float numeroA;
 	float numeroB;
-	char operacao;
 
 	printf("numeroA");
 	scanf("%d", &numeroA);
@@ -19,10 +13,16 @@ int main() {
 	printf("NumeroB");
 	scanf("%d", &numeroB);
 
-	printf("operacao");
-	scanf("%d", &operacao);
+	if(numeroA > 10)
+		printf("TestandoA");
+	
 
-	printf("Testando");
+	if(numeroB > 10)
+		printf("TestandoB");
+
+	float resultado = 5 + 5;
+
+	printf("resultado");
 
 	return 0;
 }
