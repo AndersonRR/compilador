@@ -14,15 +14,29 @@ inteiro principal(){
 	leia numeroB;
 
 	se numeroA > 10
-		escreva TestandoA;
-	
+		escreva AmaiorQueDez;
 
 	se numeroB > 10
-		escreva TestandoB;
+		escreva BmaiorQueDez;
+
+	se numeroA > numeroB
+		escreva AmaiorQueB;
+	
+	se numeroA < numeroB
+		escreva BmaiorQueA;
+
+	se numeroA IGUAL numeroB
+		escreva BigualA;
+
+	real soma <- numeroA + numeroB;
+
+	escreva @ soma;
 
 	real resultado <- 5 + 6;
 
-	escreva resultado;
+	escreva @ resultado;
+
+	professor;
 
 	retorne 0;
 }

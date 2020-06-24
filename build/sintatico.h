@@ -1,8 +1,9 @@
-/* A Bison parser, made by GNU Bison 3.0.4.  */
+/* A Bison parser, made by GNU Bison 3.5.1.  */
 
 /* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2020 Free Software Foundation,
+   Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -30,6 +31,9 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
+/* Undocumented macros, especially those whose name start with YY_,
+   are private implementation details.  Do not rely on them.  */
+
 #ifndef YY_YY_TABSINTATICA_TAB_H_INCLUDED
 # define YY_YY_TABSINTATICA_TAB_H_INCLUDED
 /* Debug traces.  */
@@ -47,72 +51,74 @@ extern int yydebug;
   {
     TIPO = 258,
     NUMERO_REAL = 259,
-    ATRIBUICAO = 260,
-    DIFERENTE = 261,
-    IDENTIFICADOR = 262,
-    MAIS = 263,
-    MENOS = 264,
-    ASTERISCO = 265,
-    BARRA = 266,
-    POTENCIA = 267,
-    FIM_LINHA = 268,
-    TABULACAO = 269,
-    E = 270,
-    OU = 271,
-    MAIS_ATRIBUICAO = 272,
-    MENOS_ATRIBUICAO = 273,
-    ASTERISCO_ATRIBUICAO = 274,
-    BARRA_ATRIBUICAO = 275,
-    MENOR = 276,
-    MAIOR = 277,
-    MAIOR_IGUAL = 278,
-    MENOR_IGUAL = 279,
-    IGUAL = 280,
-    EXCLAMACAO = 281,
-    COMENTARIO = 282,
-    E_COMERCIAL = 283,
-    BARRA_VERTICAL = 284,
-    DOIS_PONTOS = 285,
-    PONTO_E_VIRGULA = 286,
-    VIRGULA = 287,
-    CHAVE_ESQUERDA = 288,
-    CHAVE_DIREITA = 289,
-    COLCHETE_ESQUERDO = 290,
-    COLCHETE_DIREITO = 291,
-    PARENTESIS_ESQUERDO = 292,
-    PARENTESIS_DIREITO = 293,
-    INCLUA = 294,
-    PRINCIPAL = 295,
-    DEFINA = 296,
-    LEIA = 297,
-    ESCREVA = 298,
-    SE = 299,
-    SENAO = 300,
-    PARA = 301,
-    DE = 302,
-    ATE = 303,
-    PARE = 304,
-    ENQUANTO = 305,
-    FACA = 306,
-    REPITA = 307,
-    RETORNE = 308
+    INTEIRO = 260,
+    ATRIBUICAO = 261,
+    DIFERENTE = 262,
+    IDENTIFICADOR = 263,
+    MAIS = 264,
+    MENOS = 265,
+    ASTERISCO = 266,
+    BARRA = 267,
+    POTENCIA = 268,
+    FIM_LINHA = 269,
+    TABULACAO = 270,
+    E = 271,
+    OU = 272,
+    MAIS_ATRIBUICAO = 273,
+    MENOS_ATRIBUICAO = 274,
+    ASTERISCO_ATRIBUICAO = 275,
+    BARRA_ATRIBUICAO = 276,
+    MENOR = 277,
+    MAIOR = 278,
+    MAIOR_IGUAL = 279,
+    MENOR_IGUAL = 280,
+    IGUAL = 281,
+    EXCLAMACAO = 282,
+    COMENTARIO = 283,
+    E_COMERCIAL = 284,
+    BARRA_VERTICAL = 285,
+    DOIS_PONTOS = 286,
+    PONTO_E_VIRGULA = 287,
+    VIRGULA = 288,
+    CHAVE_ESQUERDA = 289,
+    CHAVE_DIREITA = 290,
+    COLCHETE_ESQUERDO = 291,
+    COLCHETE_DIREITO = 292,
+    PARENTESIS_ESQUERDO = 293,
+    PARENTESIS_DIREITO = 294,
+    ASPAS = 295,
+    INCLUA = 296,
+    PRINCIPAL = 297,
+    DEFINA = 298,
+    LEIA = 299,
+    ESCREVA = 300,
+    PROFESSOR = 301,
+    SE = 302,
+    SENAO = 303,
+    PARA = 304,
+    DE = 305,
+    ATE = 306,
+    PARE = 307,
+    ENQUANTO = 308,
+    FACA = 309,
+    REPITA = 310,
+    RETORNE = 311
   };
 #endif
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-
 union YYSTYPE
 {
-#line 23 "TabSintatica.y" /* yacc.c:1909  */
+#line 23 "TabSintatica.y"
 
 	int number;
 	char caracter;
 	char* string;
 
-#line 114 "TabSintatica.tab.h" /* yacc.c:1909  */
-};
+#line 120 "TabSintatica.tab.h"
 
+};
 typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1

@@ -91,8 +91,10 @@ identificador {letra}+|{letra}+_{letra}+|_{letra}+
 "}" 		return(CHAVE_DIREITA);
 "[" 		return(COLCHETE_ESQUERDO);
 "]" 		return(COLCHETE_DIREITO);
+"@"			return(ASPAS);
 
 "principal"	return(PRINCIPAL);
+"professor"	return(PROFESSOR);
 
 {tipo} {
 	yylval.string = strdup(yytext); 

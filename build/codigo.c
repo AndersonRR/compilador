@@ -7,22 +7,37 @@ int main() {
 	float numeroA;
 	float numeroB;
 
-	printf("numeroA");
-	scanf("%d", &numeroA);
+	printf("numeroA\n");
+	scanf("%f", &numeroA);
 
-	printf("NumeroB");
-	scanf("%d", &numeroB);
+	printf("NumeroB\n");
+	scanf("%f", &numeroB);
 
 	if(numeroA > 10)
-		printf("TestandoA");
+		printf("AmaiorQueDez\n");
 	
 
 	if(numeroB > 10)
-		printf("TestandoB");
+		printf("BmaiorQueDez\n");
 
-	float resultado = 5 + 5;
+	if(numeroA > numeroB)
+		printf("AmaiorQueB\n");
+	
+	if(numeroA < numeroB)
+		printf("BmaiorQueA\n");
 
-	printf("resultado");
+	if(numeroA == numeroB)
+		printf("BigualA\n");
+
+	float soma = numeroA + numeroB;
+
+	printf("%2.0f\n", soma);
+
+	float resultado = 5 + 6;
+
+	printf("%2.0f\n", resultado);
+
+	printf("Marcos Cavalheiro\n");
 
 	return 0;
 }

@@ -28,6 +28,7 @@ map <string,string> dicionario;
 
 %token <string> TIPO
 %token <number> NUMERO_REAL
+%token INTEIRO
 
 %token ATRIBUICAO DIFERENTE 
 %token <string> IDENTIFICADOR
@@ -48,12 +49,13 @@ map <string,string> dicionario;
 %token DOIS_PONTOS PONTO_E_VIRGULA VIRGULA
 %token CHAVE_ESQUERDA CHAVE_DIREITA
 %token COLCHETE_ESQUERDO COLCHETE_DIREITO
-%token PARENTESIS_ESQUERDO PARENTESIS_DIREITO
+%token PARENTESIS_ESQUERDO PARENTESIS_DIREITO ASPAS
 
 %token INCLUA PRINCIPAL DEFINA
 
 /*ESTRUTURA DE ENTRADA E SAIDA*/
 %token LEIA ESCREVA
+%token PROFESSOR
 
 /*SESSAO DE ESTRUTURAS CONDICIONAIS E DE REPETICAO*/
 %token SE SENAO
@@ -82,6 +84,7 @@ Linha:
 	| LeituraEscrita
 	| EstruturaRepeticao
 	| Operacao
+	| Professor
 	| Retorno
 ;
 
@@ -95,6 +98,10 @@ Principal:
 	| CHAVE_DIREITA {printf("}");}
 ;
 
+Professor:
+	PROFESSOR PONTO_E_VIRGULA { printf("printf(\"Marcos Cavalheiro\\n\");"); }
+;
+
 Tipo:
 	TIPO IDENTIFICADOR PONTO_E_VIRGULA {
 		char aux = returnType($1[0]);//CAPTURA O TIPO DA VARIAVEL
@@ -103,9 +110,10 @@ Tipo:
 ;
 
 LeituraEscrita:
-	ESCREVA IDENTIFICADOR PONTO_E_VIRGULA { printf("printf(\"%s\");", $2);  }
-	| ESCREVA NUMERO_REAL PONTO_E_VIRGULA { printf("printf(\"%d\");", $2); }
-	| LEIA IDENTIFICADOR PONTO_E_VIRGULA { printf("scanf(\"%%d\", &%s);", $2); }
+	ESCREVA IDENTIFICADOR PONTO_E_VIRGULA { printf("printf(\"%s\\n\");", $2);  }
+	| ESCREVA ASPAS IDENTIFICADOR PONTO_E_VIRGULA { printf("printf(\"%%2.0f\\n\", %s);", $3); }
+	| ESCREVA NUMERO_REAL PONTO_E_VIRGULA { printf("printf(\"%d\\n\");", $2); }
+	| LEIA IDENTIFICADOR PONTO_E_VIRGULA { printf("scanf(\"%%f\", &%s);", $2); }
 ;
 
 Condicional:
@@ -130,6 +138,9 @@ Condicional:
 
 	| SE IDENTIFICADOR IGUAL NUMERO_REAL { printf("if(%s == %d)",$2, $4); }
 	| SE PARENTESIS_ESQUERDO IDENTIFICADOR IGUAL NUMERO_REAL PARENTESIS_DIREITO{ printf("if(%s == %d)",$3, $5); }
+	| SE IDENTIFICADOR MENOR IDENTIFICADOR { printf("if(%s < %s)",$2, $4); }
+	| SE IDENTIFICADOR MAIOR IDENTIFICADOR { printf("if(%s > %s)",$2, $4); }
+	| SE IDENTIFICADOR IGUAL IDENTIFICADOR { printf("if(%s == %s)",$2, $4); }
 ;
 
 EstruturaRepeticao:
@@ -145,8 +156,10 @@ EstruturaRepeticao:
 ;
 
 Operacao:
-	TIPO IDENTIFICADOR ATRIBUICAO NUMERO_REAL MAIS NUMERO_REAL PONTO_E_VIRGULA { printf("float %s = %d + %d;", $2, $4, $4);}
-	| TIPO IDENTIFICADOR ATRIBUICAO NUMERO_REAL MENOS NUMERO_REAL PONTO_E_VIRGULA { printf("float %s = %d - %d;", $2, $4, $4);}
+	TIPO IDENTIFICADOR ATRIBUICAO NUMERO_REAL MAIS NUMERO_REAL PONTO_E_VIRGULA { printf("float %s = %d + %d;", $2, $4, $6);}
+	| TIPO IDENTIFICADOR ATRIBUICAO NUMERO_REAL MENOS NUMERO_REAL PONTO_E_VIRGULA { printf("float %s = %d - %d;", $2, $4, $6);}
+	| TIPO IDENTIFICADOR ATRIBUICAO IDENTIFICADOR MENOS IDENTIFICADOR PONTO_E_VIRGULA { printf("float %s = %s - %s;", $2, $4, $6);}
+	| TIPO IDENTIFICADOR ATRIBUICAO IDENTIFICADOR MAIS IDENTIFICADOR PONTO_E_VIRGULA { printf("float %s = %s + %s;", $2, $4, $6);}
 ;
 
 Retorno:
