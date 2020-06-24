@@ -4,14 +4,14 @@ compilar: TabLexica.l TabSintatica.y
 	mv TabSintatica.tab.c build/sintatico.c
 	flex TabLexica.l
 	mv lex.yy.c build/lexico.c
-	g++ build/sintatico.c build/lexico.c -g -o build/portugolc -lm
+	g++ build/sintatico.c build/lexico.c -g -o build/portugolc -lm 2>/dev/null
 
 init: #portugolc
 	rm build/codigo.c
-	./build/portugolc codigo.prg >> build/codigo.c
+	./build/portugolc codigo.prg >> build/codigo.c 
 
 exec: build/codigo.c
-	gcc build/codigo.c -o build/programaC
+	gcc build/codigo.c -o build/programaC 2>/dev/null
 	./build/programaC
 
 clean: 

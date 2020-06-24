@@ -7,7 +7,7 @@ int main() {
 	float numeroA;
 	float numeroB;
 
-	printf("numeroA\n");
+	printf("NumeroA\n");
 	scanf("%f", &numeroA);
 
 	printf("NumeroB\n");
@@ -15,7 +15,6 @@ int main() {
 
 	if(numeroA > 10)
 		printf("AmaiorQueDez\n");
-	
 
 	if(numeroB > 10)
 		printf("BmaiorQueDez\n");

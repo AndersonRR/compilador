@@ -7,7 +7,7 @@ inteiro principal(){
 	real numeroA;
 	real numeroB;
 
-	escreva numeroA;
+	escreva NumeroA;
 	leia numeroA;
 
 	escreva NumeroB;
